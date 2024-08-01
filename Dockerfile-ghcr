@@ -1,0 +1,1 @@
+FROM gitlab-registry.cern.ch/fmeloni/ci-exercises/ci-test-hello:${VERSION}-alma9
