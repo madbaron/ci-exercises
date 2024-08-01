@@ -27,5 +27,7 @@ jobs:
           trigger_token: ${{ secrets.DEPLOY_TRIGGER_TOKEN }}
           access_token: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
           id: '190508'
-          ref: 'main'
+          ref: '${BRANCH_NAME}'
           variables: '{}'
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
