@@ -1,0 +1,24 @@
+name: via-gitlab
+on:
+  push:
+    branches:
+      - 'main'
+    tags:
+      - 'v*'
+  pull_request:
+    branches:
+      - 'main'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [{dir: AlmaLinux9,suffix: alma9}]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+        with:
+          fetch-depth: 0
+      - name: GitLab Pipeline Trigger
+        uses: digital-blueprint/gitlab-pipeline-trigger-action@v1.2.0
