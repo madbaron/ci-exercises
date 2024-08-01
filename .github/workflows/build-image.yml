@@ -38,12 +38,12 @@ jobs:
             OWNER: '${{ github.repository_owner }}'
       - name: Docker Meta
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5.5.1
         with:
           images: ghcr.io/${{env.OWNER_LC}}/ci-test-dummy
       - name: Build and Push (ci-test)
         id: docker_build_ci-test
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6.5.0
         with:
           push: true
           file: Dockerfile-helloworld
