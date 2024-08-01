@@ -36,7 +36,7 @@ stages:
   #   changes:
   #     - ${DOCKERFILE}
 
-build-spack:
+build-image:
   extends: .build_template
   variables:
     IMAGE: ci-test-hello
