@@ -28,3 +28,4 @@ jobs:
           access_token: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
           id: '190508'
           ref: 'main'
+          variables: '{}'
