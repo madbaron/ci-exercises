@@ -42,7 +42,6 @@ build-image:
     IMAGE: ci-test-hello
   parallel:
     matrix:
-      - CONTEXT: AlmaLinux9
-        DOCKERFILE: Dockerfile-helloworld
+      - DOCKERFILE: Dockerfile-helloworld
         OSTAG: alma9
 
