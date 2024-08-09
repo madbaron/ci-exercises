@@ -52,6 +52,6 @@ jobs:
           push: true
           file: Dockerfile-ghcr
           build-args: |
-            VERSION='main'
+            VERSION=${{ steps.meta.outputs.version }}
           #tags: ghcr.io/${{env.OWNER_LC}}/ci-test-hello:${{steps.meta.outputs.version}}-${{matrix.os.suffix}}          
           tags: ghcr.io/${{env.OWNER_LC}}/ci-test-hello:main-${{matrix.os.suffix}}
