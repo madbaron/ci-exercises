@@ -45,13 +45,13 @@ jobs:
           id: '190508'
           ref: '${{ steps.meta.outputs.version }}'
           variables: '{}'
-      - name: Build and Push (ci-test)
-        id: docker_build_ci-test
-        uses: docker/build-push-action@v6.5.0
-        with:
-          push: true
-          file: Dockerfile-ghcr
-          build-args: |
-            VERSION=${{ steps.meta.outputs.version }}
-          #tags: ghcr.io/${{env.OWNER_LC}}/ci-test-hello:${{steps.meta.outputs.version}}-${{matrix.os.suffix}}          
-          tags: ghcr.io/${{env.OWNER_LC}}/ci-test-hello:main-${{matrix.os.suffix}}
+      #- name: Build and Push (ci-test)
+      #  id: docker_build_ci-test
+      #  uses: docker/build-push-action@v6.5.0
+      #  with:
+      #    push: true
+      #    file: Dockerfile-ghcr
+      #    build-args: |
+      #      VERSION=${{ steps.meta.outputs.version }}
+      #    #tags: ghcr.io/${{env.OWNER_LC}}/ci-test-hello:${{steps.meta.outputs.version}}-${{matrix.os.suffix}}          
+      #    tags: ghcr.io/${{env.OWNER_LC}}/ci-test-hello:main-${{matrix.os.suffix}}
