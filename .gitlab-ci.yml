@@ -5,7 +5,8 @@ stages:
   stage: build
   image:
     # Use CERN version of the Kaniko image
-    name: gitlab-registry.cern.ch/ci-tools/docker-image-builder
+    # name: gitlab-registry.cern.ch/ci-tools/docker-image-builder
+    name: gcr.io/kaniko-project/executor
     entrypoint: [""]
   variables:
     CONTEXT: .
