@@ -19,7 +19,8 @@ stages:
     # Prepare Kaniko configuration file
     - echo "{\"auths\":{\"ghcr.io\":{\"auth\":\"$(-n $CI_REGISTRY_USER:$CI_REGISTRY_PASSWORD | base64 -w0)\"}}}" > /kaniko/.docker/config.json
   script:
-    - printenv
+    #- printenv
+    - echo ${CI_REGISTRY_USER} ${CI_REGISTRY_PASSWORD} ${DESTINATION}
     # Build and push the image from the given Dockerfile
     # See https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#variables-reference for available variables
     - /kaniko/executor --context ${CI_PROJECT_DIR}/${CONTEXT}
